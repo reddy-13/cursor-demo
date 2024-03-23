@@ -10,17 +10,17 @@ const CustomCursor = () => {
 
         const moveCursor = (event) => {
             gsap.to(cursor, {
-                duration: 0.0,
+                duration: 0.3,
                 x: event.clientX - 580,
                 y: event.clientY - 150,
                 ease: 'power2.out',
             });
         };
 
-        document.addEventListener('mousemove', moveCursor);
+        document.addEventListener('click', moveCursor);
 
         return () => {
-            document.removeEventListener('mousemove', moveCursor);
+            document.removeEventListener('click', moveCursor);
         };
     }, []);
 
