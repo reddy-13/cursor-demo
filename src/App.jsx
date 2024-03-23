@@ -13,6 +13,7 @@ function App() {
     <>
       <div>
         <CustomCursor2 />
+        {/* new one */}
         {/* <div className='flair' style={{ cursor: `url(${logo}), auto` }}></div> */}
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
