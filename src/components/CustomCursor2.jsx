@@ -58,7 +58,7 @@ function CustomCursor2() {
         return () => {
             // document.removeEventListener('mousemove', move);
             document.removeEventListener('click', move);
-            document.addEventListener('touchstart', move);
+            document.addEventListener('touchend', move);
             document.removeEventListener('mousedown', handleMouseDown);
             document.removeEventListener('mouseup', handleMouseUp);
         };
