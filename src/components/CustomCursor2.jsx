@@ -49,14 +49,14 @@ function CustomCursor2() {
     };
 
     useEffect(() => {
-        document.addEventListener('mousemove', move);
-        document.addEventListener('touchmove', move);
+        // document.addEventListener('mousemove', move);
+        document.addEventListener('click', move);
         document.addEventListener('mousedown', handleMouseDown);
         document.addEventListener('mouseup', handleMouseUp);
 
         return () => {
-            document.removeEventListener('mousemove', move);
-            document.removeEventListener('touchmove', move);
+            // document.removeEventListener('mousemove', move);
+            document.removeEventListener('click', move);
             document.removeEventListener('mousedown', handleMouseDown);
             document.removeEventListener('mouseup', handleMouseUp);
         };
@@ -68,55 +68,48 @@ function CustomCursor2() {
                 {`
         * {
             margin: 0;
-            cursor: none;
+            // cursor: none;
         }
  
-        body {
-            background-color: #0984e3;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
- 
+   
         #cursor {
             position: absolute;
             cursor: url(${logo}) auto;
-            background-color: ${isClicking ? 'crimson' : 'crimson'};
+            // background-color: ${isClicking ? 'crimson' : 'crimson'};
             height: 10px;
             width: 10px;
             border-radius: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
-            // transition: background-color 0.2s ease;
+            transition: background-color 0.7s ease;
         }
  
         #cursor-border {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             background-color: transparent;
-            border: 3px solid ${buttonHovered ? 'red' : '#fff'};
-            border-radius: 50%;
+            // border: 3px solid ${buttonHovered ? 'red' : '#fff'};
+            // border-radius: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
-            // transition: all 0.s ease-out;
+            background-size: cover;
+            transition: all 0.7s ease-out;
         }
       `}
             </style>
             <div
                 id="cursor"
-                style={{ left: `${cursorX}px`, top: `${cursorY}px` }}
+                style={{ left: `${cursorX}px`, top: `${cursorY}px`, }}
             ></div>
-            <div id="cursor-border"></div>
+            <div id="cursor-border" style={{ backgroundImage: `url(${logo})` }}></div>
 
             <button
                 onMouseEnter={() => handleButtonHover(true)}
                 onMouseLeave={() => handleButtonHover(false)}
                 style={{
                     backgroundColor: buttonHovered ? 'green' : 'transparent',
-                    // color: 'white',
+                    color: 'white',
                     padding: '10px 20px',
                     border: '2px solid white',
                     borderRadius: '5px',
