@@ -40,3 +40,24 @@
 .read-the-docs {
   color: #888;
 }
+
+h1 {
+  margin: 1rem;
+  text-align: center;
+}
+
+.flair {
+  background: green;
+  width: 200px;
+  height: 200px;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+
+  background-size: cover;
+  pointer-events: none; /* Ensure the cursor does not interfere with mouse events */
+  z-index: 9999; /* Ensure the cursor appears on top of other elements */
+}
