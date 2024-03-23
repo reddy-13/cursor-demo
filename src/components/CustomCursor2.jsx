@@ -50,7 +50,7 @@ function CustomCursor2() {
 
     useEffect(() => {
         // document.addEventListener('mousemove', move);
-        document.addEventListener('touchstart', move);
+        document.addEventListener('touchend', move);
         document.addEventListener('click', move);
         document.addEventListener('mousedown', handleMouseDown);
         document.addEventListener('mouseup', handleMouseUp);
